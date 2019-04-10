@@ -22,8 +22,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api rootProject.ext.dependencies.appcompat_v7
@@ -61,4 +65,5 @@ dependencies {
     //webView封装
     implementation 'com.just.agentweb:agentweb:4.0.2'
     compile project(path: ':changeskin')
+    implementation(name: 'nlssdk', ext: 'aar')
 }

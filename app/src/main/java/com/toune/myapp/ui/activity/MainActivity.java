@@ -12,6 +12,7 @@ import com.toune.myapp.base.BaseActivity;
 import com.toune.myapp.ui.model.TestVo;
 import com.toune.myapp.ui.presenter.MainActivityPresenter;
 import com.toune.myapp.ui.view.MainView;
+import com.toune.util.rxtool.RxActivityTool;
 import com.toune.util.rxtool.view.RxToast;
 import com.toune.util.rxview.dialog.RxDialogSureCancel;
 import com.zhy.changeskin.SkinManager;
@@ -63,6 +64,7 @@ public class MainActivity extends BaseActivity<MainView, MainActivityPresenter> 
                     public void onClick(View v) {
                         rxDialogSureCancel.dismiss();
                         SkinManager.getInstance().removeAnySkin();
+                        RxActivityTool.skipActivity(context, SpeechRecognizerActivity.class);
                     }
                 });
                 rxDialogSureCancel.setCancelListener(new View.OnClickListener() {
